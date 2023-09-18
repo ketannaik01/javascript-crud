@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer list</title>
+    <meta charset="windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <!-- CSS -->
+    <link rel="stylesheet" href="login.css">
+     <!-- JavaScript -->
+     <script src="login.js"></script>
+</head>
+<body>
+
+    <div class="loginForm">
+        <h1>Login</h1>
+        <div class="left">Login ID: </div><div class="right"><input type="text" id="login_id"></div><br><br>
+        <div class="left">Password: </div><div class="right"><input type="password" id="password"></div><br><br>
+        <button onclick="authenticateAndCallAPI()">Authentication</button>
+        <div id="response"></div>
+    </div>
+
+    <!-- Main Data Table -->
+    <div class="mainTable">
+        <h1>Data</h1>
+        <table id="table" border="1">
+            <tr>
+                <th>Sno</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Country</th>
+                <th>Mobile number</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            <!-- Existing rows -->
+            <tr>
+                <td>01</td>
+                <td>Michael</td>
+                <td>Davidson</td>
+                <td>United State</td>
+                <td>123456789</td>
+                <td>xxx@gmail.com</td>
+                <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+           
+        </table>
+    </div>
+
+    <!-- Add Customer Form -->
+    <div class="addCustomer">
+        <h2>Add Customer</h2>
+        <div class="left">First Name: </div><div class="right"><input type="text" id="new_fname"></div><br><br>
+        <div class="left">Last Name: </div><div class="right"><input type="text" id="new_lname"></div><br><br>
+        <div class="left">Country: </div><div class="right"><input type="text" id="new_country"></div><br><br>
+        <div class="left">Mobile number: </div><div class="right"><input type="number" id="new_mNumber"></div><br><br>
+        <div class="left">Email: </div><div class="right"><input type="email" id="new_Email"></div><br><br>
+        <button onclick="addCustomer()" class="addRowBtn">Add</button><br><br>
+    </div>
+
+    <!-- Edit Customer Form -->
+    <div class="editTable">
+        <h2>Edit Customer</h2>
+        <div class="left">First Name: </div><div class="right"><input type="text" id="fname"></div><br><br>
+        <div class="left">Last Name: </div><div class="right"><input type="text" id="lname"></div><br><br>
+        <div class="left">Country: </div><div class="right"><input type="text" id="country"></div><br><br>
+        <div class="left">Mobile number: </div><div class="right"><input type="number" id="mNumber"></div><br><br>
+        <div class="left">Email: </div><div class="right"><input type="email" id="Email"></div><br><br>
+        <button onclick="updateRow()" class="editRowBtn">Update</button><br><br>
+    </div>
+
+   
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>API Integration - HTML</title>
+</head>
+<body>
+    <h1>API Integration - HTML</h1>
+    <button onclick="authenticateAndCallAPI()">Authenticate and Call API</button>
+    <div id="response"></div>
+
+    
+</body>
+</html> -->
